@@ -1,4 +1,5 @@
 import { useState } from "react";
+import TodoItem from "./TodoItem";
 
 export default function Todo() {
   const [todo, setTodo] = useState(""); //initial value of todo is an empty string
@@ -22,7 +23,12 @@ export default function Todo() {
         />
         <button type="submit">Add</button>
       </form>
-      {console.log(todos)}
+      {/* printing all the elements of the todos array */}
+      {todos.map((item) => (
+        // <h3>{item}</h3>
+        <TodoItem key={item} item={item} />
+      ))}
+      {/* {console.log(todos)} */}
     </div>
   );
 }
